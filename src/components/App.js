@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '../pages/home/Index';
 import Survey from '../pages/survey/Survey';
 import Header from './Header';
-import ClientForm from './ClientForm';
-import FreelanceForm from './FreelanceForm';
+import Freelances from '../pages/Freelances';
+import Results from '../pages/Results';
+import Error from './Error';
 
 function App() {
   return (
@@ -13,11 +14,10 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-
-        <Route path='/Survey' element={<Survey />}>
-          <Route path='client' element={<ClientForm />} />
-          <Route path='freelance' element={<FreelanceForm />} />
-        </Route>
+        <Route path='/survey/:questionNumber' element={<Survey />} />
+        <Route path='/freelances' element={<Freelances />} />
+        <Route path='/results' element={<Results />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </Router>
   );
