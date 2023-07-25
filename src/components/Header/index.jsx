@@ -15,6 +15,7 @@ const StyledLink = styled(Link)`
     padding: 11px 30px;
     color: ${colors.secondary};
     text-decoration: none;
+    font-weight: 700;
     ${(props) =>
         props.$isFullLink && `
             color: white;
@@ -37,8 +38,8 @@ function Header() {
 
             <div>
                 <StyledLink to="/">Accueil</StyledLink>
-                <StyledLink to="/survey/1" $isFullLink>Questionnaire</StyledLink>
-                <StyledLink to="/freelances">Freelances</StyledLink>
+                <StyledLink to="/freelances">Profils</StyledLink>
+                <StyledLink to="/survey/1" $isFullLink>Faire le test</StyledLink>
             </div>
         </StyledNav>
     )
