@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import colors from "../../utils/style/colors";
 
 const StyledContainer = styled.div`
-    background: #F9F9FC;
+    background: ${colors.backgroundLight};
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -42,9 +42,7 @@ function Home() {
                 <StyledLink to="/survey/1">Faire le test</StyledLink>
             </StyledAction>
 
-            <div>
-                <img src={homeIllustration} alt="Home illistration" />
-            </div>
+            <img src={homeIllustration} alt="Home illistration" />
         </StyledContainer>
     )
 }

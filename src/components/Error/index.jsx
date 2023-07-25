@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import back404 from '../../assets/404.svg';
+import colors from '../../utils/style/colors';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F9F9FC; 
+    background: ${colors.backgroundLight}; 
     margin: 90px;
     padding: 100px;
     gap: 50px;

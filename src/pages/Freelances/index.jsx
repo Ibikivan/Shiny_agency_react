@@ -1,5 +1,6 @@
 import Card from '../../components/Card';
 import styled from 'styled-components';
+import colors from '../../utils/style/colors';
 
 const Container = styled.div`
     display: flex;
@@ -18,7 +19,7 @@ const CardsContainer = styled.div`
 
 const StyledH3 = styled.h3`
     margin: 50px;
-    color: #8186A0;
+    color: ${colors.secondary};
     font-weight: 700;
     line-height: 132.5%;
 `
