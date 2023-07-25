@@ -1,11 +1,26 @@
 import Card from '../../components/Card';
 import styled from 'styled-components';
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 90px;
+`
+
 const CardsContainer = styled.div`
     display: grid;
-    gap: 24px;
+    gap: 70px;
     grid-template-rows: 350px 350px;
     grid-template-columns: repeat(2, 1fr);
+    margin: 45px;
+`
+
+const StyledH3 = styled.h3`
+    margin: 50px;
+    color: #8186A0;
+    font-weight: 700;
+    line-height: 132.5%;
 `
 
 const freelanceProfiles = [
@@ -28,11 +43,12 @@ const freelanceProfiles = [
 
 function Freelances() {
     return (
-        <div>
-            <h1>Freelance 👩‍💻👨‍💻</h1>
+        <Container>
+            <h1>Trouvez votre prestataire</h1>
+
+            <StyledH3>Chez Shiny nous réunissons les meilleurs profils pour vous.</StyledH3>
 
             <CardsContainer>
-
                 {freelanceProfiles.map((profile) => (
                     <Card 
                         key={profile.id}
@@ -42,7 +58,7 @@ function Freelances() {
                     />
                 ))}
             </CardsContainer>
-        </div>
+        </Container>
     );
 }
 
