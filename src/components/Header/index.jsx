@@ -34,7 +34,9 @@ const StyledLogo = styled.img`
 function Header() {
     return (
         <StyledNav>
-            <StyledLogo src={lightLogo} alt="shiny logo" />
+            <Link to="/">
+                <StyledLogo src={lightLogo} alt="shiny logo" />
+            </Link>
 
             <div>
                 <StyledLink to="/">Accueil</StyledLink>
