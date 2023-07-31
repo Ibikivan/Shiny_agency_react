@@ -6,27 +6,27 @@ import Freelances from '../pages/Freelances';
 import Results from '../pages/Results';
 import Error from './Error';
 import Footer from './Footer';
-import { ThemeProvider } from '../utils/context/index';
+import { AppProvider } from '../utils/context/index';
 import GlobalStyle from '../utils/style';
 
 function App() {
   return (
     <Router>
-      <ThemeProvider>
+      <AppProvider>
         <GlobalStyle />
 
         <Header />
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/survey/:questionNumber' element={<Survey />} />
           <Route path='/freelances' element={<Freelances />} />
+          <Route path='/survey/:questionNumber' element={<Survey />} />
           <Route path='/results' element={<Results />} />
           <Route path='*' element={<Error />} />
         </Routes>
 
         <Footer />
-      </ThemeProvider>
+      </AppProvider>
     </Router>
   );
 }

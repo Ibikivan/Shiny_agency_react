@@ -1,7 +1,7 @@
 import colors from "../../utils/style/colors";
 import styled from 'styled-components';
 import { useContext } from "react";
-import { ThemeContext } from "../../utils/context/index";
+import { AppContext } from "../../utils/context/index";
 
 const Container = styled.footer`
     display: flex;
@@ -19,7 +19,7 @@ const ModeButton = styled.button`
 `
 
 function Footer() {
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme, toggleTheme } = useContext(AppContext);
 
     function handleClick() {
         toggleTheme();
