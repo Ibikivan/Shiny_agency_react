@@ -1,9 +1,10 @@
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import styled from 'styled-components';
 import colors from "../../utils/style/colors";
 import { StyledLoader } from "../../utils/style/Atom";
 import { AppContext } from "../../utils/context/index";
+import { useFetch } from "../../utils/hooks";
 
 const SurveyWrapper = styled.div`
     display: flex;
@@ -64,29 +65,10 @@ const PrevNext = styled.div`
 `
 
 function Survey() {
-    const [questions, setQuestions] = useState({});
-    const [dataIsLoading, setDataIsLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const url = 'http://localhost:8000/survey';
+    const { data, isLoading, error } = useFetch("Survey", url);
+    const { surveyData } = data;
     const { answers, handleAnswer } = useContext(AppContext);
-
-    useEffect(() => {
-        async function fetchSurveyData() {
-            setDataIsLoading(true);
-            
-            try {
-                const response = await fetch('http://localhost:8000/survey');
-                const { surveyData } = await response.json();
-                setQuestions(surveyData);
-            } catch (error) {
-                console.log("fecth Error: ", error);
-                setError(true);
-            } finally {
-                setDataIsLoading(false);
-            }
-        };
-
-        fetchSurveyData();
-    }, []);
     
     const { questionNumber } = useParams();
     const nextQuestion = parseInt(questionNumber) + 1;
@@ -108,10 +90,10 @@ function Survey() {
             : (
                 <SurveyWrapper>
                     <StyledH1>Question {questionNumber}</StyledH1>
-                    {dataIsLoading ? (
+                    {isLoading ? (
                         <StyledLoader />
                     ) : (
-                        <p>{questions[parseInt(questionNumber)]}</p>
+                        <p>{surveyData && surveyData[parseInt(questionNumber)]}</p>
                     )}
 
                     <ButtonContainer>
@@ -134,7 +116,7 @@ function Survey() {
                             Précédente
                         </Link>
 
-                        {parseInt(questionNumber) === Object.keys(questions).length ?
+                        {surveyData && parseInt(questionNumber) === Object.keys(surveyData).length ?
                             (
                                 <Link to='/results' onClick={(event) => isSurveyCompleted(event)}>Résultats</Link>
                             ) : (
