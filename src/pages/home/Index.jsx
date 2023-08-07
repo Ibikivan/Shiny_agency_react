@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import homeIllustration from '../../assets/home-illustration.svg';
 import styled from 'styled-components';
 import colors from "../../utils/style/colors";
+import { StyledLink } from "../../utils/style/Atom";
 
 const StyledContainer = styled.div`
     background: ${colors.backgroundLight};
@@ -22,15 +22,6 @@ const StyledH1 = styled.h1`
     font-size: 50px;
     font-weight: 700;
     line-height: 160.5%;
-`
-
-const StyledLink = styled(Link)`
-    background-color: ${colors.primary};
-    padding: 11px 30px;
-    color: white;
-    font-weight: 700;
-    border-radius: 30px;
-    text-decoration: none;
 `
 
 function Home() {

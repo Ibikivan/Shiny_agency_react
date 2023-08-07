@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import lightLogo from '../../assets/dark-logo.png';
+import darkLogo from '../../assets/light-logo.png';
+import { useContext } from "react";
+import { AppContext } from "../../utils/context/index";
 
 const StyledNav = styled.nav`
     display: flex;
@@ -32,10 +35,13 @@ const StyledLogo = styled.img`
 `
 
 function Header() {
+    const { theme } = useContext(AppContext);
+    const logo = theme === "dark" ? darkLogo : lightLogo;
+
     return (
         <StyledNav>
             <Link to="/">
-                <StyledLogo src={lightLogo} alt="shiny logo" />
+                <StyledLogo src={logo} alt="shiny logo" />
             </Link>
 
             <div>

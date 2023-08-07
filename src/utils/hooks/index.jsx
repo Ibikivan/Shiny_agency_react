@@ -19,9 +19,9 @@ export function useFetch(element, url) {
                 setError(true);
 
                 if (!url) {
-                    console.log(`${element} useFetch error: url attendue !`);
+                    console.log(`=== ${element} useFetch error ===: url attendue !`);
                 } else {
-                    console.log(`${element} fetch error: `, error);
+                    console.log(`=== ${element} fetch error ===: `, error);
                 }
             } finally {
                 setIsLoading(false);

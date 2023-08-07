@@ -1,5 +1,6 @@
 import colors from "./colors";
 import styled, {keyframes} from 'styled-components';
+import { Link } from "react-router-dom";
 
 const rotate = keyframes`
     from {
@@ -18,4 +19,17 @@ export const StyledLoader = styled.div`
     height: 0;
     width: 0;
     animation: ${rotate} 1s infinite linear;
+`
+
+export const StyledLink = styled(Link)`
+    background-color: ${colors.primary};
+    padding: 11px 30px;
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    &:hover {
+        box-shadow: 0 0 4px black;
+    }
 `

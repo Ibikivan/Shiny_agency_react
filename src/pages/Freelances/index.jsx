@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import { StyledLoader } from '../../utils/style/Atom';
 import { useFetch } from '../../utils/hooks';
+import ComponentError from '../../components/ComponentError';
 
 const Container = styled.div`
     display: flex;
@@ -14,12 +15,16 @@ const Container = styled.div`
 const CardsContainer = styled.div`
     display: grid;
     gap: 70px;
-    grid-template-rows: 350px 350px;
+    grid-auto-rows: 350px;
     grid-template-columns: repeat(2, 1fr);
     margin: 45px;
 `
 
-
+const StyledH1 = styled.h1`
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 132.5%;
+`
 
 const StyledH3 = styled.h3`
     text-align: center;
@@ -36,10 +41,12 @@ function Freelances() {
 
     return (
         <Container>
-            <h1>Trouvez votre prestataire</h1>
+            <StyledH1>Trouvez votre prestataire</StyledH1>
 
             {error ? (
-                <StyledH3>Oops... Une erreur est survenue. Rééssayez!</StyledH3>
+                    <ComponentError
+                        errorText="Une erreur est survenue. Rééssayez!"
+                    />
                 ) : (
                 <Container>
                     <StyledH3>Chez Shiny nous réunissons les meilleurs profils pour vous.</StyledH3>

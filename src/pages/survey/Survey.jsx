@@ -5,6 +5,7 @@ import colors from "../../utils/style/colors";
 import { StyledLoader } from "../../utils/style/Atom";
 import { AppContext } from "../../utils/context/index";
 import { useFetch } from "../../utils/hooks";
+import ComponentError from "../../components/ComponentError";
 
 const SurveyWrapper = styled.div`
     display: flex;
@@ -12,13 +13,6 @@ const SurveyWrapper = styled.div`
     align-items : center;
     margin: 160px;
     gap: 63px;
-`
-
-const StyledError = styled.p`
-    margin: 300px;
-    text-align: center;
-    font-weight: 700px;
-    font-size: 25px;
 `
 
 const StyledH1 = styled.h1`
@@ -86,7 +80,7 @@ function Survey() {
     return(
         <span>
             {error
-            ? (<StyledError>Oops... une erreur est survenue !</StyledError>)
+            ? (<ComponentError errorText="une erreur est survenue !" />)
             : (
                 <SurveyWrapper>
                     <StyledH1>Question {questionNumber}</StyledH1>
