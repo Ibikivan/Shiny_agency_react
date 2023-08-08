@@ -76,8 +76,6 @@ function Results() {
     const url = `http://localhost:8000/results/?${formatAnswers(answers)}`;
     const { data, isLoading, error } = useFetch("Results", url)
     const { resultsData } = data;
-    
-    console.log("=== results ===", resultsData)
 
     return (
         <span>

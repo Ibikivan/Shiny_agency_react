@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import lightLogo from '../../assets/dark-logo.png';
 import darkLogo from '../../assets/light-logo.png';
-import { useContext } from "react";
-import { AppContext } from "../../utils/context/index";
+import { useTheme } from '../../utils/hooks';
 
 const StyledNav = styled.nav`
     display: flex;
@@ -35,7 +34,7 @@ const StyledLogo = styled.img`
 `
 
 function Header() {
-    const { theme } = useContext(AppContext);
+    const { theme } = useTheme();
     const logo = theme === "dark" ? darkLogo : lightLogo;
 
     return (
