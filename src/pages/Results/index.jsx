@@ -23,7 +23,7 @@ function Results() {
                 <span>
                     {isLoading ? (
                     <Container>
-                        <StyledLoader />
+                        <StyledLoader data-testid="loader" />
                     </Container>
                 ) : (
                     <Container>

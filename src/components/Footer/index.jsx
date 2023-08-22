@@ -1,21 +1,5 @@
-import colors from "../../utils/style/colors";
-import styled from 'styled-components';
 import { useTheme } from "../../utils/hooks";
-
-const Container = styled.footer`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-`
-
-const ModeButton = styled.button`
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: ${colors.secondary};
-`
+import { Container, ModeButton } from "./style";
 
 function Footer() {
     const { theme, toggleTheme } = useTheme();

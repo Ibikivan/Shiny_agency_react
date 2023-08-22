@@ -1,28 +1,6 @@
 import homeIllustration from '../../assets/home-illustration.svg';
-import styled from 'styled-components';
-import colors from "../../utils/style/colors";
 import { StyledLink } from "../../utils/style/Atom";
-
-const StyledContainer = styled.div`
-    background: ${colors.backgroundLight};
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 60px;
-    padding: 130px 90px;
-    gap: 50px;
-`
-
-const StyledAction = styled.div`
-    width: 550px;
-`
-
-const StyledH1 = styled.h1`
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 160.5%;
-`
+import { StyledContainer, StyledAction, StyledH1 } from './style';
 
 function Home() {
     return (
