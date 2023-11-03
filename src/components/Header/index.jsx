@@ -46,7 +46,9 @@ function Header() {
             <div>
                 <StyledLink to="/">Accueil</StyledLink>
                 <StyledLink to="/freelances">Profils</StyledLink>
-                <StyledLink to="/survey/1" $isFullLink>Faire le test</StyledLink>
+                <StyledLink to="/pfdviewer">Pdf</StyledLink>
+                <StyledLink to="/survey/1">Faire le test</StyledLink>
+                <StyledLink to="/dashboard" $isFullLink>Connexion</StyledLink>
             </div>
         </StyledNav>
     )

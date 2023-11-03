@@ -5,6 +5,7 @@ export const AppContext = createContext();
 export function AppProvider({ children }) {
     const [theme, setTheme] = useState('light');
     const [answers, setAnswers] = useState({});
+    const [allowedRoles, setAllowedRoles] = useState(['particulier']);
     
     function toggleTheme() {
         setTheme(theme === 'light' ? 'dark' : 'light');
@@ -24,7 +25,9 @@ export function AppProvider({ children }) {
                 theme,
                 toggleTheme,
                 answers,
-                handleAnswer
+                handleAnswer,
+                allowedRoles,
+                setAllowedRoles
             }}
         >
             { children }
